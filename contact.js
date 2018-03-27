@@ -66,8 +66,6 @@ const displayContacts = (index, name, phone, email, address, status) => {
 
 
 const removeRow = (index) => {
-	//let tableBody = document.getElementById('tableBody');
-	//tableBody.deleteRow(index);
 	contactArray.splice(index, 1);
 	localStorage.contactsRecord = JSON.stringify(contactArray);
 	init();
