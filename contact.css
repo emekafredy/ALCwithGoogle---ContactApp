@@ -1,0 +1,29 @@
+#input-body {
+  height: 255px;
+}
+
+#display {
+  height: 260px;
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
+
+a:hover {
+	cursor: pointer;
+}
+
+button {
+	width: 100px;
+}
+
+.top {
+	background: #3b5998;
+	margin-top: -50px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.bottom {
+	padding-top: 10px;
+	padding-left: -10px;
+}
