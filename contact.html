@@ -2,136 +2,94 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Val Notepad</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Contact App</title>
         <link href="contact.css" rel="stylesheet"/>
     </head>
-    <body onload="init()" class=" jumbotron">
+    <body onload="init()">
 
-        
-
-          <div class="text-center top">
-            <h1>Andela Learning Community</h1>
-            <p><i class="fa fa-address-card fa-5x"></i></p>
-            <h3 class="text-center">Contact App</h3>
+          <div id="modalDiv"> 
           </div>
 
-          <div class="bottom">
+          <div class="top-div" style="text-align: center;">
+            <h1>Andela Learning Community</h1>
+            <p><img src="http://www.linkedin-makeover.com/wp-content/uploads/2013/10/Email-Address-Book.png" alt="" style="width: 10%"></p>
+            <h2>Contact App</h2>
+          </div>
 
-            <div class="col-sm-6 col-xs-12 left">
+          <div class="bottom-div">
 
-              <div class="panel panel-primary">
+            <div class="column-div">
+              <div class="left-heading">Create New Contact</div>
 
-                <div class="panel-heading text-center">Create New Contact</div>
+              <div class="left-panel" id="input-body">
 
-                <div class="panel-body" id="input-body">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <span class="input-group-addon">
-                        <i class="fa fa-user fa"></i>
-                      </span>
-                      <input type="text" class="form-control" id="name" placeholder="Contact Name" required />
-                    </div>
-                  </div>
 
-                  <div class="form-group">
-                    <div class="input-group">
-                      <span class="input-group-addon">
-                        <i class="fa fa-phone"></i>
-                      </span>
-                      <input type="text" class="form-control" id="phone" placeholder="Phone Number" required>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <div class="input-group">
-                      <span class="input-group-addon">
-                        <i class="fa fa-envelope"></i>
-                      </span>
-                      <input type="text" class="form-control" id="email" placeholder="E-mail Address" required>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <div class="input-group">
-                      <span class="input-group-addon">
-                        <i class="fa fa-home"></i>
-                      </span>
-                      <input type="text" class="form-control" id="contactAddress" placeholder="Contact Address" required>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <div class="input-group">
-                      <span class="input-group-addon">
-                        <i class="fa fa-home"></i>
-                      </span>
-                      <select class="form-control" name="Contact Status" id="contactStatus" required>
-                        <option value="Colleague">Colleague</option>
-                        <option value="Friend">Friend</option>
-                        <option value="Associate">Associate</option>
-                        <option value="Other">Other</option>
-                      </select>
-                    </div>
+                <div class="form">
+                  <div>
+                    <input type="text" class="input" id="firstName" placeholder="First Name">
                   </div>
                 </div>
 
-
-
-                <div class="panel-footer text-center">
-                  <button onclick="onSubmit()" class="btn btn-primary">Save Contact</button>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="col-sm-6 col-xs-12 right">
-              <div class="panel panel-success">
-                <div class="panel-heading text-center">
-                  Contacts
-                  <div class="form-group has-feedback">
-                    <input type="text" class="form-control" name="search" id="search" placeholder="search contact">
-                    <span class="glyphicon glyphicon-search form-control-feedback">
-                    </span>
+                <div class="form">
+                  <div>
+                    <input type="text" class="input" id="lastName" placeholder="Last Name">
                   </div>
                 </div>
-                <div class="panel-body" id="display">
-                  <table class="table table-striped table-bordered" id="contactTable">
-                    <thead>
-                      <tr>
-                        <th>Name</th>
-                        <th>Phone</th>
-                        <th>Email</th>
-                        <th>Address</th>
-                        <th>Status</th>
-                        <th colspan="2" style="text-align: center;">Actions</th>
-                      </tr>
-                    </thead>
-                    <tbody id="tableBody">
-                      
-                    </tbody>
-                  </table>
+
+                <div class="form">
+                  <div>
+                    <input type="text" class="input" id="phone" placeholder="Phone Number">
+                  </div>
                 </div>
+
+                <div class="form">
+                  <div>
+                    <input type="text" class="input" id="email" placeholder="E-mail Address" >
+                  </div>
+                </div>
+
+                <div class="form">
+                  <div>
+                    <input type="text" class="input" id="contactAddress" placeholder="Contact Address">
+                  </div>
+                </div>
+
                 
               </div>
+
+              <div class="left-footer text-center">
+                <button class="btn" onclick="addContact()" style="width: 200px;" id="saveBtn">Add Contact</button>
+              </div>
             </div>
-          </div>
+
+            
+
+            <div class="column-div">              
+              <div class="right-heading">
+                Contacts
+              </div>
+              <div class="right-panel" id="display">
+                <table class="display-table" id="contactTable">
+                  <thead >
+                    <tr >
+                      <th >Name</th>
+                      <th colspan="2">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tableBody" >
+                    
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+
+            </div>
+
+          
         </div>
 
 
-
-
-
-
-
-
-
-
-
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="contact.js"></script>
     </body>
 </html>
